@@ -77,24 +77,39 @@ def __build_query(fltr):
     if query.endswith("&") or query.endswith("?"):
         query = query[:-1]
 
-    LOG.info("ADSBX query: %s", query)
-    print query
+    LOG.debug("ADSBX query: %s", query)
     return query
 
 
-def flights_print(flights):
-    """ Pretty print flight data. """
-    pkeys = ["Call", "To", "From", "Type"]
+def flights_print(print_fltr, flights):
+    """ Pretty print flight data.
 
-    print "{:10} {:6} {:6} {:5}".format("CALLSIGN", "FROM", "TO", "TYPE")
+    Args:
+        print_fltr (list): List of attributes to print.
+        flights (dict): Dict of ADS-B Exchange flight data.
+    """
+
+    # Print a neat header of the attributes.
+    header = ""
+    for each_item in print_fltr:
+        header += "{:12s}".format(each_item.upper())
+    print header
+
+    # Print the data.
+    pkeys = [FLTR_RESPS[key] for key in print_fltr]
     for each_flight in flights:
+        # Extract intersted keys/values to print in to a new dict.
         flight = dict((k, each_flight[k]) for k in pkeys if k in each_flight)
 
         if all(key in flight for key in pkeys):
-            print "{:10} {:6} {:6} {:5}".format(
-                flight["Call"], flight["From"][:4], flight["To"][:4],
-                flight["Type"])
-
+            flight_data = ""
+            for key in pkeys:
+                if key is "To" or key is "From":
+                    val = each_flight[key].encode(encoding="utf-8")[:4]
+                else:
+                    val = str(each_flight[key])
+                flight_data += "{:12s}".format(val)
+            print flight_data
 
 def flights_refine(fltr, flights):
     """Refine the ADS-B Exchange data into a smaller dataset.
@@ -149,12 +164,17 @@ def main():
     logging.basicConfig(format=format_str)
     log.setLevel(logging.INFO)
 
+    # Fetch flight information.
     fltr = {}
     fltr["country"] = "United States"
     fltr["operator"] = "Alaska"
     flight_data = flights_get(fltr)
     rflights = flights_refine(FLTR_RESPS.values(), flight_data)
-    flights_print(rflights)
+
+    # Print flight information.
+    print_fltr = ["callsign", "from", "to", "type", "latitude", "longitude",
+                  "regn"]
+    flights_print(print_fltr, rflights)
 
 if __name__ == "__main__":
     main()
