@@ -12,30 +12,55 @@ import requests
 ADSBX_URL = "http://public-api.adsbexchange.com/VirtualRadar/AircraftList.json?"
 
 FLTR_KEYS = {
-    "fk_latitute": "lat",       # latitude, equals
-    "fk_longitude": "lng",      # longitute, equals
-    "fk_airport": "fAirC",      # to/from/via airport code, contains
-    "fk_callsign": "fCallC",    # callsign, contains
-    "fk_country": "fCouC",      # country, contains
-    "fk_distance": "fDstU",     # distance, upto
-    "fk_icao": "fIcoC",         # ICAO code, contains
-    "fk_ismil": "fMilQ",        # is military?, equals
-    "fk_operator": "fOpC",      # operator, contains
-    "fk_regn": "fRegC",         # flight registration, contains
+    "latitude": "lat",       # latitude, equals
+    "longitude": "lng",      # longitute, equals
+    "airport": "fAirC",      # to/from/via airport code, contains
+    "callsign": "fCallC",    # callsign, contains
+    "country": "fCouC",      # country, contains
+    "distance": "fDstU",     # distance, upto
+    "icao": "fIcoC",         # ICAO code, contains
+    "ismil": "fMilQ",        # is military?, equals
+    "operator": "fOpC",      # operator, contains
+    "regn": "fRegC",         # flight registration, contains
 }
 
 FLTR_RESPS = {
-    "fr_icao": "Icao",          # flights's ICAO code
-    "fr_to": "To",              # arrival airport
-    "fr_from": "From",          # departure airport
-    "fr_call": "Call",          # callsign
-    "fr_latitude": "Lat",       # latitude
-    "fr_longitude": "Long",     # longitude
-    "fr_type": "Type",          # aircraft ICAO type
-    "fr_mdl": "Mdl",            # aircraft model
-    "fr_man": "Man",            # aircraft manufacturer
-    "fr_operator": "Op",        # flight operator
-    "fr_regn": "Reg",           # aircraft registration
+    "icao": "Icao",          # flights's ICAO code
+    "to": "To",              # arrival airport
+    "from": "From",          # departure airport
+    "callsign": "Call",      # callsign
+    "latitude": "Lat",       # latitude
+    "longitude": "Long",     # longitude
+    "type": "Type",          # aircraft ICAO type
+    "mdl": "Mdl",            # aircraft model
+    "man": "Man",            # aircraft manufacturer
+    "operator": "Op",        # flight operator
+    "regn": "Reg",           # aircraft registration
+}
+
+FLTR_MAPS = {
+    "icao": "Icao",          # flights's ICAO code
+    "to": "To",              # arrival airport
+    "from": "From",          # departure airport
+    "callsign": "Call",          # callsign
+    "type": "Type",          # aircraft ICAO type
+    "operator": "Op",        # flight operator
+}
+
+FLTR_HELP = {
+    "latitude": "aircraft's current latitude",
+    "longitude": "aircraft's current longitude",
+    "airport": "arrival/departure/via ICAO airport code",
+    "country": "country to which the aircraft is registered to",
+    "distance": "distance in kms (up to)",
+    "icao": "flight's ICAO code",
+    "to": "arrival airport",
+    "from": "departure airport",
+    "callsign": "flight's callsign",
+    "type": "aircraft's ICAO model type, e.g., A321 or B738",
+    "man": "aircraft's manufacturer, e.g., Airbus or Boeing",
+    "operator": "flight operator, e.g., Southwest or Delta",
+    "regn": "aircraft's registration, e.g., VT-IDN or A6-EDF",
 }
 
 LOG = logging.getLogger(__name__)
@@ -52,7 +77,8 @@ def __build_query(fltr):
     if query.endswith("&") or query.endswith("?"):
         query = query[:-1]
 
-    LOG.debug("ADSBX query: %s", query)
+    LOG.info("ADSBX query: %s", query)
+    print query
     return query
 
 
@@ -90,30 +116,13 @@ def flights_refine(fltr, flights):
     return rflights
 
 
-def flights_get(lat=None, lng=None, airport=None, callsign=None,
-                country=None, distance=None, icao=None, operator=None,
-                regn=None):
+def flights_get(flight_fltr):
     """Fetch flight(s) information from ADS-B Exchange. """
-    fltr = {}
 
-    if lat:
-        fltr[FLTR_KEYS.get("fk_latitude")] = lat
-    if lng:
-        fltr[FLTR_KEYS.get("fk_longitude")] = lng
-    if airport:
-        fltr[FLTR_KEYS.get("fk_airport")] = airport
-    if callsign:
-        fltr[FLTR_KEYS.get("fk_callsign")] = callsign
-    if country:
-        fltr[FLTR_KEYS.get("fk_country")] = country
-    if distance:
-        fltr[FLTR_KEYS.get("fk_distance")] = distance
-    if icao:
-        fltr[FLTR_KEYS.get("fk_icao")] = icao
-    if operator:
-        fltr[FLTR_KEYS.get("fk_operator")] = operator
-    if regn:
-        fltr[FLTR_KEYS.get("fk_regn")] = regn
+    # Map the incoming filter to ADS-B Exchange's format.
+    fltr = dict((FLTR_KEYS[key], flight_fltr[key]) for key in
+                flight_fltr.keys())
+    LOG.debug("incoming flight filter: %s", pprint.pformat(fltr))
 
     # Form the query by applying the given filters.
     flight_data_query = __build_query(fltr)
@@ -140,7 +149,10 @@ def main():
     logging.basicConfig(format=format_str)
     log.setLevel(logging.INFO)
 
-    flight_data = flights_get(country="United States", operator="Spirit")
+    fltr = {}
+    fltr["country"] = "United States"
+    fltr["operator"] = "Alaska"
+    flight_data = flights_get(fltr)
     rflights = flights_refine(FLTR_RESPS.values(), flight_data)
     flights_print(rflights)
 
