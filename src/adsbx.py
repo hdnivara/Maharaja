@@ -81,7 +81,7 @@ def __build_query(fltr):
     return query
 
 
-def flights_print(print_fltr, flights):
+def flights_str_get(print_fltr, flights):
     """ Pretty print flight data.
 
     Args:
@@ -93,23 +93,25 @@ def flights_print(print_fltr, flights):
     header = ""
     for each_item in print_fltr:
         header += "{:12s}".format(each_item.upper())
-    print header
+    header += "\n"
 
     # Print the data.
+    flight_data = ""
     pkeys = [FLTR_RESPS[key] for key in print_fltr]
     for each_flight in flights:
         # Extract intersted keys/values to print in to a new dict.
         flight = dict((k, each_flight[k]) for k in pkeys if k in each_flight)
 
         if all(key in flight for key in pkeys):
-            flight_data = ""
             for key in pkeys:
                 if key is "To" or key is "From":
                     val = each_flight[key].encode(encoding="utf-8")[:4]
                 else:
                     val = str(each_flight[key])
                 flight_data += "{:12s}".format(val)
-            print flight_data
+            flight_data += "\n"
+
+    return header + flight_data
 
 def flights_refine(fltr, flights):
     """Refine the ADS-B Exchange data into a smaller dataset.
@@ -174,7 +176,8 @@ def main():
     # Print flight information.
     print_fltr = ["callsign", "from", "to", "type", "latitude", "longitude",
                   "regn"]
-    flights_print(print_fltr, rflights)
+    flights = flights_str_get(print_fltr, rflights)
+    print flights
 
 if __name__ == "__main__":
     main()
