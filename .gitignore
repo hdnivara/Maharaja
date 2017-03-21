@@ -1,0 +1,10 @@
+# Byte-compiled files
+*.py[cod]
+
+# Virtualenv
+.venv
+venv/
+ENV/
+
+# Miscellaneous
+*.log
