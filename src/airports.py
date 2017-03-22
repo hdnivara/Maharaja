@@ -6,12 +6,12 @@ Info includes ICAO and IATA codes, name, city, country, latitude and longitude.
 
 import logging
 import json
-import pprint
 import requests
 
 BASE_URL = "http://www.airport-data.com/api/ap_info.json?"
 DB_FILE = "airports.json"
-CODE_TYPES = ["icao", "iata"]
+CODE_TYPES = ["icao",]
+AIRPORT_DB = None
 AIRPORT_DATA_STATUS_CODES = {
     200: "OK: All good",
     304: "NOT MODIFIED: No new data since last request",
@@ -27,6 +27,27 @@ AIRPORT_DATA_STATUS_CODES = {
     503: "SERVICE UNAVAILABLE: Service is busy",
 }
 LOG = logging.getLogger(__name__)
+
+
+def __airport_db_load():
+    """Read airport data from a local JSON file and return it in a dict. """
+    global AIRPORT_DB
+
+    try:
+        with open(DB_FILE, "r") as filep:
+            try:
+                AIRPORT_DB = json.load(filep)
+            except ValueError:
+                AIRPORT_DB = {}
+    except IOError:
+        AIRPORT_DB = {}
+
+
+def __airport_db_write(code, new_airport):
+    """Write the incoming airport_data dict to a local JSON file. """
+    AIRPORT_DB[code] = new_airport
+    with open(DB_FILE, "wb") as filep:
+        json.dump(AIRPORT_DB, filep, indent=4)
 
 
 def __airport_url_get(code_type, code):
@@ -50,42 +71,48 @@ def __airport_get(airport_query):
     return airport_data
 
 
-def airport_read():
-    """Read airport data from a local JSON file and return it in a dict. """
-    try:
-        with open(DB_FILE, "r") as filep:
-            try:
-                airport_data = json.load(filep)
-            except ValueError:
-                airport_data = {}
-    except IOError:
-        airport_data = {}
-
-    return airport_data
-
-
-def airport_write(airport_data):
-    """Write the incoming airport_data dict to a local JSON file. """
-    with open(DB_FILE, "wb") as filep:
-        json.dump(airport_data, filep, indent=4)
-
-
-def airport_get(code_type, code):
-    """Fetch airport information. """
-    code_type = code_type.lower()
-
-    if code_type not in CODE_TYPES:
-        raise ValueError("Invalid airport code type, %s", code_type)
-
+def __airport_remote_get(code_type, code):
     url = __airport_url_get(code_type, code)
     LOG.info("airport url: %s", url)
 
     jdats = __airport_get(url)
     keys = ["name", "location", "country_code", "latitude", "longitude",
             "icao", "iata"]
-    airport = dict((key, jdats[key]) for key in keys if key in jdats)
-    LOG.debug("airport data: %s", pprint.pformat(airport))
-    return airport
+    remote_airport = dict((key, jdats[key]) for key in keys if key in jdats)
+    return remote_airport
+
+
+def __airport_local_get(airport_code):
+    if AIRPORT_DB is None:
+        __airport_db_load()
+
+    if airport_code in AIRPORT_DB.keys():
+        return AIRPORT_DB[airport_code]
+    else:
+        return None
+
+
+def airport_get(code_type, code):
+    """Fetch airport information. """
+    code_type = code_type.lower()
+    code = code.upper()
+
+    if code_type not in CODE_TYPES:
+        raise ValueError("Invalid airport code type, %s", code_type)
+
+    # Service the request locally, if possible.
+    new_airport = __airport_local_get(code)
+
+    if new_airport is None:
+        LOG.debug("%s is requires remote service", code)
+
+        # Airport data not available locally. Fetch it from the remote service.
+        new_airport = __airport_remote_get(code_type, code)
+
+        # Add the new airport's data to local database.
+        __airport_db_write(code, new_airport)
+
+    return new_airport
 
 
 def main():
@@ -97,7 +124,7 @@ def main():
 
     # Fetch airport data.
     airport_get("icao", "ksfo")
-    airport_get("IATA", "maa")
+    airport_get("icao", "vomm")
 
 
 if __name__ == "__main__":

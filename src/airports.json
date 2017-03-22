@@ -8,6 +8,14 @@
         "country_code": "US", 
         "latitude": "42.749111"
     }, 
+    "SEGU": {
+        "iata": null, 
+        "longitude": "-79.883558", 
+        "icao": "SEGU", 
+        "location": null, 
+        "country_code": null, 
+        "latitude": "-2.157419"
+    }, 
     "KSLC": {
         "name": "Salt Lake City International Airport", 
         "iata": "SLC", 
@@ -26,6 +34,24 @@
         "country_code": "US", 
         "latitude": "26.536167"
     }, 
+    "VHHH": {
+        "name": "Hong Kong International Airport", 
+        "iata": "HKG", 
+        "longitude": "113.914603", 
+        "icao": "VHHH", 
+        "location": "Hong Kong", 
+        "country_code": "HK", 
+        "latitude": "22.308919"
+    }, 
+    "EIDW": {
+        "name": "Dublin International Airport", 
+        "iata": "DUB", 
+        "longitude": "-6.270075", 
+        "icao": "EIDW", 
+        "location": "Dublin", 
+        "country_code": "IE", 
+        "latitude": "53.421333"
+    }, 
     "KATL": {
         "name": "Hartsfield - Jackson Atlanta International Airport", 
         "iata": "ATL", 
@@ -35,6 +61,15 @@
         "country_code": "US", 
         "latitude": "33.636700"
     }, 
+    "ZSPD": {
+        "name": "Shanghai Pudong International Airport", 
+        "iata": "PVG", 
+        "longitude": "121.792414", 
+        "icao": "ZSPD", 
+        "location": "Shanghai", 
+        "country_code": "CN", 
+        "latitude": "31.144086"
+    }, 
     "KPDX": {
         "name": "Portland International Airport", 
         "iata": "PDX", 
@@ -43,6 +78,15 @@
         "location": "Portland, OR", 
         "country_code": "US", 
         "latitude": "45.588709"
+    }, 
+    "CYEG": {
+        "name": "Edmonton International Airport", 
+        "iata": "YEG", 
+        "longitude": "-113.579722", 
+        "icao": "CYEG", 
+        "location": "Edmonton Capital Region, Alberta", 
+        "country_code": "CA", 
+        "latitude": "53.309723"
     }, 
     "KPWM": {
         "name": "Portland International Jetport Airport", 
@@ -62,14 +106,23 @@
         "country_code": "US", 
         "latitude": "42.212417"
     }, 
-    "KLGB": {
-        "name": "Long Beach /daugherty Field/ Airport", 
-        "iata": "LGB", 
-        "longitude": "-118.151733", 
-        "icao": "KLGB", 
-        "location": "Long Beach, CA", 
-        "country_code": "US", 
-        "latitude": "33.817754"
+    "CYVR": {
+        "name": "Vancouver International Airport", 
+        "iata": "YVR", 
+        "longitude": "-123.184444", 
+        "icao": "CYVR", 
+        "location": "Vancouver, British Columbia", 
+        "country_code": "CA", 
+        "latitude": "49.193889"
+    }, 
+    "MGGT": {
+        "name": "La Aurora International Airport", 
+        "iata": "GUA", 
+        "longitude": "-90.527475", 
+        "icao": "MGGT", 
+        "location": "Guatemala City, Guatemala", 
+        "country_code": "GT", 
+        "latitude": "14.583272"
     }, 
     "OMAA": {
         "name": "Abu Dhabi International Airport", 
@@ -80,6 +133,33 @@
         "country_code": "AE", 
         "latitude": "24.432972"
     }, 
+    "MWCR": {
+        "name": "Owen Roberts International Airport", 
+        "iata": "GCM", 
+        "longitude": "-81.357750", 
+        "icao": "MWCR", 
+        "location": "Georgetown, Grand Cayman", 
+        "country_code": "KY", 
+        "latitude": "19.292778"
+    }, 
+    "KIDA": {
+        "name": "Idaho Falls Regional Airport", 
+        "iata": "IDA", 
+        "longitude": "-112.070750", 
+        "icao": "KIDA", 
+        "location": "Idaho Falls, ID", 
+        "country_code": "US", 
+        "latitude": "43.513722"
+    }, 
+    "KCAE": {
+        "name": "Columbia Metropolitan Airport", 
+        "iata": "CAE", 
+        "longitude": "-81.119528", 
+        "icao": "KCAE", 
+        "location": "Columbia, SC", 
+        "country_code": "US", 
+        "latitude": "33.938833"
+    }, 
     "KPIT": {
         "name": "Pittsburgh International Airport", 
         "iata": "PIT", 
@@ -89,14 +169,14 @@
         "country_code": "US", 
         "latitude": "40.491417"
     }, 
-    "KDEN": {
-        "name": "Denver International Airport", 
-        "iata": "DEN", 
-        "longitude": "-104.673167", 
-        "icao": "KDEN", 
-        "location": "Denver, CO", 
+    "KACY": {
+        "name": "Atlantic City International Airport", 
+        "iata": "ACY", 
+        "longitude": "-74.577167", 
+        "icao": "KACY", 
+        "location": "Atlantic City, NJ", 
         "country_code": "US", 
-        "latitude": "39.861667"
+        "latitude": "39.457583"
     }, 
     "KSEA": {
         "name": "Seattle-tacoma International Airport", 
@@ -115,6 +195,15 @@
         "location": "Deadhorse, AK", 
         "country_code": "US", 
         "latitude": "70.195546"
+    }, 
+    "KBIS": {
+        "name": "Bismarck Municipal Airport", 
+        "iata": "BIS", 
+        "longitude": "-100.745750", 
+        "icao": "KBIS", 
+        "location": "Bismarck, ND", 
+        "country_code": "US", 
+        "latitude": "46.772722"
     }, 
     "KSTL": {
         "name": "Lambert-st Louis International Airport", 
@@ -143,6 +232,24 @@
         "country_code": "EG", 
         "latitude": "30.121944"
     }, 
+    "CYUL": {
+        "name": "Montr\u00e9al-Pierre Elliott Trudeau International Airport", 
+        "iata": "YUL", 
+        "longitude": "-73.740833", 
+        "icao": "CYUL", 
+        "location": "Montreal, Quebec", 
+        "country_code": "CA", 
+        "latitude": "45.470556"
+    }, 
+    "KBHM": {
+        "name": "Birmingham-shuttlesworth International Airport", 
+        "iata": "BHM", 
+        "longitude": "-86.752306", 
+        "icao": "KBHM", 
+        "location": "Birmingham, AL", 
+        "country_code": "US", 
+        "latitude": "33.563889"
+    }, 
     "MDSD": {
         "name": "Las Am\u00e9ricas-JFPG International Airport (Dr. Jos\u00e9 Fco. Pe\u00f1a G\u00f3mez)", 
         "iata": "SDQ", 
@@ -170,14 +277,32 @@
         "country_code": "US", 
         "latitude": "33.829667"
     }, 
-    "KLAS": {
-        "name": "Mc Carran International Airport", 
-        "iata": "LAS", 
-        "longitude": "-115.152250", 
-        "icao": "KLAS", 
-        "location": "Las Vegas, NV", 
+    "MKJS": {
+        "name": "Sangster International Airport", 
+        "iata": "MBJ", 
+        "longitude": "-77.913358", 
+        "icao": "MKJS", 
+        "location": "Montego Bay", 
+        "country_code": "JM", 
+        "latitude": "18.503717"
+    }, 
+    "KOKC": {
+        "name": "Will Rogers World Airport", 
+        "iata": "OKC", 
+        "longitude": "-97.600762", 
+        "icao": "KOKC", 
+        "location": "Oklahoma City, OK", 
         "country_code": "US", 
-        "latitude": "36.080056"
+        "latitude": "35.393074"
+    }, 
+    "KTYS": {
+        "name": "Mc Ghee Tyson Airport", 
+        "iata": "TYS", 
+        "longitude": "-83.994028", 
+        "icao": "KTYS", 
+        "location": "Knoxville, TN", 
+        "country_code": "US", 
+        "latitude": "35.810972"
     }, 
     "KMYR": {
         "name": "Myrtle Beach International Airport", 
@@ -196,6 +321,15 @@
         "location": "Chicago, IL", 
         "country_code": "US", 
         "latitude": "41.979333"
+    }, 
+    "MDPC": {
+        "name": "Punta Cana International Airport", 
+        "iata": "PUJ", 
+        "longitude": "-68.363431", 
+        "icao": "MDPC", 
+        "location": "Punta Cana / Hig\u00fcey", 
+        "country_code": "DO", 
+        "latitude": "18.567367"
     }, 
     "KLAX": {
         "name": "Los Angeles International Airport", 
@@ -251,6 +385,15 @@
         "country_code": "KW", 
         "latitude": "29.226964"
     }, 
+    "KIND": {
+        "name": "Indianapolis International Airport", 
+        "iata": "IND", 
+        "longitude": "-86.294661", 
+        "icao": "KIND", 
+        "location": "Indianapolis, IN", 
+        "country_code": "US", 
+        "latitude": "39.717299"
+    }, 
     "KMKE": {
         "name": "General Mitchell International Airport", 
         "iata": "MKE", 
@@ -260,14 +403,59 @@
         "country_code": "US", 
         "latitude": "42.946931"
     }, 
-    "KMHT": {
-        "name": "Manchester Airport", 
-        "iata": "MHT", 
-        "longitude": "-71.435750", 
-        "icao": "KMHT", 
-        "location": "Manchester, NH", 
+    "CYOW": {
+        "name": "Ottawa Macdonald-Cartier International Airport (Macdonald-Cartier International Airport)", 
+        "iata": "YOW", 
+        "longitude": "-75.669167", 
+        "icao": "CYOW", 
+        "location": "Ottawa, Ontario", 
+        "country_code": "CA", 
+        "latitude": "45.322500"
+    }, 
+    "PHOG": {
+        "name": "Kahului Airport", 
+        "iata": "OGG", 
+        "longitude": "-156.430458", 
+        "icao": "PHOG", 
+        "location": "Kahului, HI", 
         "country_code": "US", 
-        "latitude": "42.932806"
+        "latitude": "20.898650"
+    }, 
+    "MROC": {
+        "name": "Juan Santamar\u00eda International Airport", 
+        "iata": "SJO", 
+        "longitude": "-84.208806", 
+        "icao": "MROC", 
+        "location": "San Jos\u00e9", 
+        "country_code": "CR", 
+        "latitude": "9.993861"
+    }, 
+    "EBBR": {
+        "name": "Brussels Airport", 
+        "iata": "BRU", 
+        "longitude": "4.484444", 
+        "icao": "EBBR", 
+        "location": "Brussels / Zaventem &#160;", 
+        "country_code": "BE", 
+        "latitude": "50.901389"
+    }, 
+    "KLIT": {
+        "name": "Bill And Hillary Clinton National/adams Fi Airport", 
+        "iata": "LIT", 
+        "longitude": "-92.224778", 
+        "icao": "KLIT", 
+        "location": "Little Rock, AR", 
+        "country_code": "US", 
+        "latitude": "34.729444"
+    }, 
+    "SKCG": {
+        "name": "Rafael N\u00fa\u00f1ez International Airport", 
+        "iata": "CTG", 
+        "longitude": "-75.512972", 
+        "icao": "SKCG", 
+        "location": "Cartagena", 
+        "country_code": "CO", 
+        "latitude": "10.442119"
     }, 
     "KDCA": {
         "name": "Ronald Reagan Washington National Airport", 
@@ -278,6 +466,15 @@
         "country_code": "US", 
         "latitude": "38.851916"
     }, 
+    "KBUF": {
+        "name": "Buffalo Niagara International Airport", 
+        "iata": "BUF", 
+        "longitude": "-78.730583", 
+        "icao": "KBUF", 
+        "location": "Buffalo, NY", 
+        "country_code": "US", 
+        "latitude": "42.940417"
+    }, 
     "KAUS": {
         "name": "Austin-bergstrom International Airport", 
         "iata": "AUS", 
@@ -287,6 +484,15 @@
         "country_code": "US", 
         "latitude": "30.194528"
     }, 
+    "YSSY": {
+        "name": "Sydney Airport", 
+        "iata": "SYD", 
+        "longitude": "151.177222", 
+        "icao": "YSSY", 
+        "location": "Mascot, New South Wales", 
+        "country_code": "AU", 
+        "latitude": "-33.946111"
+    }, 
     "KMIA": {
         "name": "Miami International Airport", 
         "iata": "MIA", 
@@ -295,6 +501,15 @@
         "location": "Miami, FL", 
         "country_code": "US", 
         "latitude": "25.795361"
+    }, 
+    "KLBE": {
+        "name": "Arnold Palmer Regional Airport", 
+        "iata": "LBE", 
+        "longitude": "-79.406750", 
+        "icao": "KLBE", 
+        "location": "Latrobe, PA", 
+        "country_code": "US", 
+        "latitude": "40.274611"
     }, 
     "KCMH": {
         "name": "Port Columbus International Airport", 
@@ -314,14 +529,23 @@
         "country_code": "US", 
         "latitude": "38.695444"
     }, 
-    "KSAN": {
-        "name": "San Diego International Airport", 
-        "iata": "SAN", 
-        "longitude": "-117.189667", 
-        "icao": "KSAN", 
-        "location": "San Diego, CA", 
+    "KSRQ": {
+        "name": "Sarasota/bradenton International Airport", 
+        "iata": "SRQ", 
+        "longitude": "-82.554389", 
+        "icao": "KSRQ", 
+        "location": "Sarasota/bradenton, FL", 
         "country_code": "US", 
-        "latitude": "32.733556"
+        "latitude": "27.395444"
+    }, 
+    "KPVD": {
+        "name": "Theodore Francis Green State Airport", 
+        "iata": "PVD", 
+        "longitude": "-71.428221", 
+        "icao": "KPVD", 
+        "location": "Providence, RI", 
+        "country_code": "US", 
+        "latitude": "41.723999"
     }, 
     "LBSF": {
         "name": "Sofia International Airport (Vrazhdebna)", 
@@ -350,6 +574,33 @@
         "country_code": "CN", 
         "latitude": "40.072444"
     }, 
+    "LLBG": {
+        "name": "Ben Gurion International Airport", 
+        "iata": "TLV", 
+        "longitude": "34.886667", 
+        "icao": "LLBG", 
+        "location": "Lod / Tel Aviv", 
+        "country_code": "IL", 
+        "latitude": "32.011389"
+    }, 
+    "KPBG": {
+        "name": "Plattsburgh International Airport", 
+        "iata": "PBG", 
+        "longitude": "-73.468139", 
+        "icao": "KPBG", 
+        "location": "Plattsburgh, NY", 
+        "country_code": "US", 
+        "latitude": "44.650944"
+    }, 
+    "RPLL": {
+        "name": "Ninoy Aquino International Airport", 
+        "iata": "MNL", 
+        "longitude": "121.019581", 
+        "icao": "RPLL", 
+        "location": "Manila", 
+        "country_code": "PH", 
+        "latitude": "14.508647"
+    }, 
     "KHRL": {
         "name": "Valley International Airport", 
         "iata": "HRL", 
@@ -368,6 +619,33 @@
         "country_code": "PR", 
         "latitude": "18.494836"
     }, 
+    "CYWG": {
+        "name": "Winnipeg James Armstrong Richardson International Airport (Winnipeg International Airport)", 
+        "iata": "YWG", 
+        "longitude": "-97.239886", 
+        "icao": "CYWG", 
+        "location": "Winnipeg, Manitoba", 
+        "country_code": "CA", 
+        "latitude": "49.910036"
+    }, 
+    "SKBO": {
+        "name": "El Dorado International Airport", 
+        "iata": "BOG", 
+        "longitude": "-74.146947", 
+        "icao": "SKBO", 
+        "location": "Bogot\u00e1", 
+        "country_code": "CO", 
+        "latitude": "4.701594"
+    }, 
+    "TNCA": {
+        "name": "Queen Beatrix International Airport", 
+        "iata": "AUA", 
+        "longitude": "-70.015221", 
+        "icao": "TNCA", 
+        "location": "Oranjestad", 
+        "country_code": "AW", 
+        "latitude": "12.501389"
+    }, 
     "KPBI": {
         "name": "Palm Beach International Airport", 
         "iata": "PBI", 
@@ -376,6 +654,15 @@
         "location": "West Palm Beach, FL", 
         "country_code": "US", 
         "latitude": "26.683167"
+    }, 
+    "KPNS": {
+        "name": "Pensacola Gulf Coast Regional Airport", 
+        "iata": "PNS", 
+        "longitude": "-87.186612", 
+        "icao": "KPNS", 
+        "location": "Pensacola, FL", 
+        "country_code": "US", 
+        "latitude": "30.473426"
     }, 
     "KLGA": {
         "name": "La Guardia Airport", 
@@ -422,6 +709,15 @@
         "country_code": "US", 
         "latitude": "41.939145"
     }, 
+    "KPHF": {
+        "name": "Newport News/williamsburg International Airport", 
+        "iata": "PHF", 
+        "longitude": "-76.492972", 
+        "icao": "KPHF", 
+        "location": "Newport News, VA", 
+        "country_code": "US", 
+        "latitude": "37.131889"
+    }, 
     "KPHL": {
         "name": "Philadelphia International Airport", 
         "iata": "PHL", 
@@ -431,14 +727,14 @@
         "country_code": "US", 
         "latitude": "39.872249"
     }, 
-    "KTYS": {
-        "name": "Mc Ghee Tyson Airport", 
-        "iata": "TYS", 
-        "longitude": "-83.994028", 
-        "icao": "KTYS", 
-        "location": "Knoxville, TN", 
+    "KLAS": {
+        "name": "Mc Carran International Airport", 
+        "iata": "LAS", 
+        "longitude": "-115.152250", 
+        "icao": "KLAS", 
+        "location": "Las Vegas, NV", 
         "country_code": "US", 
-        "latitude": "35.810972"
+        "latitude": "36.080056"
     }, 
     "KFLL": {
         "name": "Fort Lauderdale/hollywood International Airport", 
@@ -458,6 +754,15 @@
         "country_code": "US", 
         "latitude": "42.362972"
     }, 
+    "EDDF": {
+        "name": "Frankfurt International Airport", 
+        "iata": "FRA", 
+        "longitude": "8.543125", 
+        "icao": "EDDF", 
+        "location": "Frankfurt am Main", 
+        "country_code": "DE", 
+        "latitude": "50.026421"
+    }, 
     "KOAK": {
         "name": "Metropolitan Oakland International Airport", 
         "iata": "OAK", 
@@ -467,6 +772,15 @@
         "country_code": "US", 
         "latitude": "37.721260"
     }, 
+    "RCTP": {
+        "name": "Taiwan Taoyuan International Airport (formerly Chiang Kai-Shek International Airport)", 
+        "iata": "TPE", 
+        "longitude": "121.231881", 
+        "icao": "RCTP", 
+        "location": "Taipei", 
+        "country_code": "TW", 
+        "latitude": "25.080261"
+    }, 
     "LIRF": {
         "name": "Leonardo Da Vinci International Airport (Fiumicino International Airport)", 
         "iata": "FCO", 
@@ -475,6 +789,15 @@
         "location": "Rome", 
         "country_code": "IT", 
         "latitude": "41.804475"
+    }, 
+    "KBOI": {
+        "name": "Boise Air Terminal/gowen Fld Airport", 
+        "iata": "BOI", 
+        "longitude": "-116.222861", 
+        "icao": "KBOI", 
+        "location": "Boise, ID", 
+        "country_code": "US", 
+        "latitude": "43.564361"
     }, 
     "KDAL": {
         "name": "Dallas Love Field Airport", 
@@ -512,6 +835,15 @@
         "country_code": "US", 
         "latitude": "44.881972"
     }, 
+    "KNKT": {
+        "name": "Cherry Point Mcas /cunningham Field/ Airport", 
+        "iata": "NKT", 
+        "longitude": "-76.880771", 
+        "icao": "KNKT", 
+        "location": "Cherry Point, NC", 
+        "country_code": "US", 
+        "latitude": "34.903168"
+    }, 
     "KMDW": {
         "name": "Chicago Midway International Airport", 
         "iata": "MDW", 
@@ -529,6 +861,15 @@
         "location": "Manchester, England", 
         "country_code": "GB", 
         "latitude": "53.353889"
+    }, 
+    "KDTL": {
+        "name": "Detroit Lakes-wething Field Airport", 
+        "iata": "DTL", 
+        "longitude": "-95.885583", 
+        "icao": "KDTL", 
+        "location": "Detroit Lakes, MN", 
+        "country_code": "US", 
+        "latitude": "46.825167"
     }, 
     "KMSY": {
         "name": "Louis Armstrong New Orleans International Airport", 
@@ -557,6 +898,15 @@
         "country_code": "US", 
         "latitude": "28.102753"
     }, 
+    "SPIM": {
+        "name": "Jorge Ch\u00e1vez International Airport", 
+        "iata": "LIM", 
+        "longitude": "-77.114319", 
+        "icao": "SPIM", 
+        "location": "Callao/Lima, Lima Metropolitan Area", 
+        "country_code": "PE", 
+        "latitude": "-12.021889"
+    }, 
     "KBUR": {
         "name": "Bob Hope Airport", 
         "iata": "BUR", 
@@ -565,6 +915,15 @@
         "location": "Burbank, CA", 
         "country_code": "US", 
         "latitude": "34.200694"
+    }, 
+    "CYYZ": {
+        "name": "Toronto Pearson International Airport (Toronto/Lester B. Pearson International Airport, Pearson Airport)", 
+        "iata": "YYZ", 
+        "longitude": "-79.630556", 
+        "icao": "CYYZ", 
+        "location": "Toronto, Ontario", 
+        "country_code": "CA", 
+        "latitude": "43.677223"
     }, 
     "KEWR": {
         "name": "Newark Liberty International Airport", 
@@ -593,6 +952,15 @@
         "country_code": "AE", 
         "latitude": "25.252778"
     }, 
+    "KABE": {
+        "name": "Lehigh Valley International Airport", 
+        "iata": "ABE", 
+        "longitude": "-75.440417", 
+        "icao": "KABE", 
+        "location": "Allentown, PA", 
+        "country_code": "US", 
+        "latitude": "40.652361"
+    }, 
     "KCLT": {
         "name": "Charlotte/douglas International Airport", 
         "iata": "CLT", 
@@ -601,6 +969,15 @@
         "location": "Charlotte, NC", 
         "country_code": "US", 
         "latitude": "35.213741"
+    }, 
+    "KCVG": {
+        "name": "Cincinnati/northern Kentucky International Airport", 
+        "iata": "CVG", 
+        "longitude": "-84.667822", 
+        "icao": "KCVG", 
+        "location": "Covington, KY", 
+        "country_code": "US", 
+        "latitude": "39.048837"
     }, 
     "EGLL": {
         "name": "London Heathrow Airport", 
@@ -611,14 +988,41 @@
         "country_code": "GB", 
         "latitude": "51.477500"
     }, 
-    "KBUF": {
-        "name": "Buffalo Niagara International Airport", 
-        "iata": "BUF", 
-        "longitude": "-78.730583", 
-        "icao": "KBUF", 
-        "location": "Buffalo, NY", 
-        "country_code": "US", 
-        "latitude": "42.940417"
+    "CYHZ": {
+        "name": "Halifax International Airport", 
+        "iata": "YHZ", 
+        "longitude": "-63.508610", 
+        "icao": "CYHZ", 
+        "location": "Halifax Regional Municipality, Nova Scotia", 
+        "country_code": "CA", 
+        "latitude": "44.880833"
+    }, 
+    "VOMM": {
+        "name": "Chennai International Airport", 
+        "iata": "MAA", 
+        "longitude": "80.180517", 
+        "icao": "VOMM", 
+        "location": "Chennai / Madras", 
+        "country_code": "IN", 
+        "latitude": "12.994414"
+    }, 
+    "CYYG": {
+        "name": "Charlottetown Airport", 
+        "iata": "YYG", 
+        "longitude": "-63.119167", 
+        "icao": "CYYG", 
+        "location": "Charlottetown, Prince Edward Island", 
+        "country_code": "CA", 
+        "latitude": "46.289167"
+    }, 
+    "CYYC": {
+        "name": "Calgary International Airport", 
+        "iata": "YYC", 
+        "longitude": "-114.020278", 
+        "icao": "CYYC", 
+        "location": "Calgary, Alberta", 
+        "country_code": "CA", 
+        "latitude": "51.113888"
     }, 
     "KCLE": {
         "name": "Cleveland-hopkins International Airport", 
@@ -701,6 +1105,33 @@
         "country_code": "US", 
         "latitude": "30.494056"
     }, 
+    "RJTT": {
+        "name": "Tokyo International Airport (Haneda)", 
+        "iata": "HND", 
+        "longitude": "139.779694", 
+        "icao": "RJTT", 
+        "location": "Ota, Tokyo", 
+        "country_code": "JP", 
+        "latitude": "35.552258"
+    }, 
+    "KGSO": {
+        "name": "Piedmont Triad International Airport", 
+        "iata": "GSO", 
+        "longitude": "-79.941123", 
+        "icao": "KGSO", 
+        "location": "Greensboro, NC", 
+        "country_code": "US", 
+        "latitude": "36.101326"
+    }, 
+    "MMPR": {
+        "name": "Lic. Gustavo D\u00edaz Ordaz International Airport", 
+        "iata": "PVR", 
+        "longitude": "-105.254153", 
+        "icao": "MMPR", 
+        "location": "Puerto Vallarta, Jalisco", 
+        "country_code": "MX", 
+        "latitude": "20.680069"
+    }, 
     "VOBG": {
         "name": "Hindustan Airport", 
         "iata": "", 
@@ -710,14 +1141,32 @@
         "country_code": "IN", 
         "latitude": "12.949986"
     }, 
-    "KACY": {
-        "name": "Atlantic City International Airport", 
-        "iata": "ACY", 
-        "longitude": "-74.577167", 
-        "icao": "KACY", 
-        "location": "Atlantic City, NJ", 
+    "LSZH": {
+        "name": "Zurich International Airport", 
+        "iata": "ZRH", 
+        "longitude": "8.549167", 
+        "icao": "LSZH", 
+        "location": "Zurich", 
+        "country_code": "CH", 
+        "latitude": "47.464722"
+    }, 
+    "KDEN": {
+        "name": "Denver International Airport", 
+        "iata": "DEN", 
+        "longitude": "-104.673167", 
+        "icao": "KDEN", 
+        "location": "Denver, CO", 
         "country_code": "US", 
-        "latitude": "39.457583"
+        "latitude": "39.861667"
+    }, 
+    "EHAM": {
+        "name": "Amsterdam Schiphol Airport", 
+        "iata": "AMS", 
+        "longitude": "4.763889", 
+        "icao": "EHAM", 
+        "location": "Haarlemmermeer, near Amsterdam", 
+        "country_code": "NL", 
+        "latitude": "52.308613"
     }, 
     "KGSP": {
         "name": "Greenville Spartanburg International Airport", 
@@ -737,6 +1186,15 @@
         "country_code": "QA", 
         "latitude": "25.261125"
     }, 
+    "KROC": {
+        "name": "Greater Rochester International Airport", 
+        "iata": "ROC", 
+        "longitude": "-77.671869", 
+        "icao": "KROC", 
+        "location": "Rochester, NY", 
+        "country_code": "US", 
+        "latitude": "43.119142"
+    }, 
     "MMSD": {
         "name": "Los Cabos International Airport", 
         "iata": "SJD", 
@@ -755,14 +1213,14 @@
         "country_code": "US", 
         "latitude": "29.645419"
     }, 
-    "KPVD": {
-        "name": "Theodore Francis Green State Airport", 
-        "iata": "PVD", 
-        "longitude": "-71.428221", 
-        "icao": "KPVD", 
-        "location": "Providence, RI", 
+    "KSAN": {
+        "name": "San Diego International Airport", 
+        "iata": "SAN", 
+        "longitude": "-117.189667", 
+        "icao": "KSAN", 
+        "location": "San Diego, CA", 
         "country_code": "US", 
-        "latitude": "41.723999"
+        "latitude": "32.733556"
     }, 
     "PANC": {
         "name": "Ted Stevens Anchorage International Airport", 
@@ -772,6 +1230,42 @@
         "location": "Anchorage, AK", 
         "country_code": "US", 
         "latitude": "61.174083"
+    }, 
+    "KSAT": {
+        "name": "San Antonio International Airport", 
+        "iata": "SAT", 
+        "longitude": "-98.469057", 
+        "icao": "KSAT", 
+        "location": "San Antonio, TX", 
+        "country_code": "US", 
+        "latitude": "29.533958"
+    }, 
+    "MYNN": {
+        "name": "Lynden Pindling International Airport (Nassau Intl)", 
+        "iata": "NAS", 
+        "longitude": "-77.466231", 
+        "icao": "MYNN", 
+        "location": "Nassau, New Providence", 
+        "country_code": "BS", 
+        "latitude": "25.038958"
+    }, 
+    "LEVC": {
+        "name": "Valencia Airport", 
+        "iata": "VLC", 
+        "longitude": "-0.481625", 
+        "icao": "LEVC", 
+        "location": "Valencia / Manises", 
+        "country_code": "ES", 
+        "latitude": "39.489314"
+    }, 
+    "CYXE": {
+        "name": "Saskatoon/John G. Diefenbaker International Airport (Saskatoon International Airport)", 
+        "iata": "YXE", 
+        "longitude": "-106.699722", 
+        "icao": "CYXE", 
+        "location": "Saskatoon, Saskatchewan", 
+        "country_code": "CA", 
+        "latitude": "52.170834"
     }, 
     "KJFK": {
         "name": "John F Kennedy International Airport", 
@@ -790,6 +1284,33 @@
         "location": "Ontario, CA", 
         "country_code": "US", 
         "latitude": "34.056000"
+    }, 
+    "PHNL": {
+        "name": "Honolulu International Airport", 
+        "iata": "HNL", 
+        "longitude": "-157.922429", 
+        "icao": "PHNL", 
+        "location": "Honolulu, HI", 
+        "country_code": "US", 
+        "latitude": "21.318681"
+    }, 
+    "GOOY": {
+        "name": "Dakar-Yoff-L\u00e9opold S\u00e9dar Senghor International Airport", 
+        "iata": "DKR", 
+        "longitude": "-17.490389", 
+        "icao": "GOOY", 
+        "location": "Dakar", 
+        "country_code": "SN", 
+        "latitude": "14.740142"
+    }, 
+    "MNMG": {
+        "name": "Managua International Airport (Augusto Cesar Sandino Intl)", 
+        "iata": "MGA", 
+        "longitude": "-86.168178", 
+        "icao": "MNMG", 
+        "location": "Managua, Managua", 
+        "country_code": "NI", 
+        "latitude": "12.141494"
     }, 
     "KIAH": {
         "name": "George Bush Intercontinental/houston Airport", 
@@ -835,6 +1356,24 @@
         "location": "Nashville, TN", 
         "country_code": "US", 
         "latitude": "36.124472"
+    }, 
+    "KMHT": {
+        "name": "Manchester Airport", 
+        "iata": "MHT", 
+        "longitude": "-71.435750", 
+        "icao": "KMHT", 
+        "location": "Manchester, NH", 
+        "country_code": "US", 
+        "latitude": "42.932806"
+    }, 
+    "KLGB": {
+        "name": "Long Beach /daugherty Field/ Airport", 
+        "iata": "LGB", 
+        "longitude": "-118.151733", 
+        "icao": "KLGB", 
+        "location": "Long Beach, CA", 
+        "country_code": "US", 
+        "latitude": "33.817754"
     }, 
     "KABQ": {
         "name": "Albuquerque International Sunport Airport", 
