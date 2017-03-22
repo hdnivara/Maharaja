@@ -8,6 +8,7 @@ import argparse
 import pprint
 
 import adsbx
+import airports
 import utils
 
 log = logging.getLogger(__name__)
@@ -74,6 +75,34 @@ def parse_args():
 
     return args
 
+def airport_get(airport_code):
+    """Get airport information. """
+    return airports.airport_get("icao", airport_code)
+
+
+def airport_db_create(flight_data):
+    """Create an airport database/dict. """
+
+    # Load airports (if any) from the local database.
+    airport_db = airports.airport_read()
+
+    airport_keys = ['From', 'To']
+    for each_flight in flight_data:
+        if all(key in each_flight for key in airport_keys):
+
+            from_airport = each_flight['From'][:4]
+            to_airport = each_flight['To'][:4]
+
+            if from_airport not in airport_db.keys():
+                tmp = airport_get(from_airport)
+                airport_db[from_airport] = tmp
+
+            if to_airport not in airport_db.keys():
+                tmp = airport_get(to_airport)
+                airport_db[to_airport] = tmp
+
+    # Write back newly added airports to our local database.
+    airports.airport_write(airport_db)
 
 def flights_get(flight_fltr):
     """Get flight information. """
@@ -97,7 +126,9 @@ def flights_print(print_attr, flight_data):
 
 def flights_map(map_attr, flight_data):
     """Plot flight data on a map. """
-    pass
+
+    airport_db_create(flight_data)
+
 
 def main():
     """Entry point to the program. """
@@ -132,7 +163,7 @@ def main():
 
     # Map flight data.
     if args.map_flag:
-        flights_map(map_attr, flights)
+        flights_map(map_attr, rflights)
 
 if __name__ == "__main__":
     main()
