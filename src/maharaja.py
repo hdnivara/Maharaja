@@ -82,27 +82,22 @@ def airport_get(airport_code):
 
 def airport_db_create(flight_data):
     """Create an airport database/dict. """
-
-    # Load airports (if any) from the local database.
-    airport_db = airports.airport_read()
+    airports_db = {}
 
     airport_keys = ['From', 'To']
     for each_flight in flight_data:
         if all(key in each_flight for key in airport_keys):
-
             from_airport = each_flight['From'][:4]
             to_airport = each_flight['To'][:4]
 
-            if from_airport not in airport_db.keys():
-                tmp = airport_get(from_airport)
-                airport_db[from_airport] = tmp
+            if from_airport not in airports_db.keys():
+                airports_db[from_airport] = airport_get(from_airport)
 
-            if to_airport not in airport_db.keys():
-                tmp = airport_get(to_airport)
-                airport_db[to_airport] = tmp
+            if to_airport not in airports_db.keys():
+                airports_db[to_airport] = airport_get(to_airport)
 
-    # Write back newly added airports to our local database.
-    airports.airport_write(airport_db)
+    return airports_db
+
 
 def flights_get(flight_fltr):
     """Get flight information. """
