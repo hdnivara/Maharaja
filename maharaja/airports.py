@@ -1,7 +1,10 @@
 """
 Fetch information about airports.
 
-Info includes ICAO and IATA codes, name, city, country, latitude and longitude.
+Information includes name, city, country, ICAO/IATA codes and location
+co-ordinates.
+
+Airport data is obtained from http://www.airport-data.com/ service.
 """
 
 import logging
@@ -93,7 +96,18 @@ def __airport_local_get(airport_code):
 
 
 def airport_get(code_type, code):
-    """Fetch airport information. """
+    """Fetch airport information.
+
+    For a given airport code, fetch more data about the aiport. The data
+    includes name, city, country, ICAO/IATA codes and location co-ordinates.
+
+    Args:
+        code_type (str): Type of airport code (e.g., ICAO)
+        code (str): Airport code itself (e.g., VOMM)
+
+    Returns:
+        dict: airport data in a dict.
+    """
     code_type = code_type.lower()
     code = code.upper()
 

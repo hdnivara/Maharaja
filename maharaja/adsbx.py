@@ -3,6 +3,8 @@ ADS-B Exchange module to fetch flight information.
 
 Applies the given set of filters (if any) and returns a neat JSON
 of matching current flights (if any).
+
+Flight data is obtained from https://public-api.adsbexchange.com/ service.
 """
 
 import logging
@@ -42,7 +44,7 @@ FLTR_MAPS = {
     "icao": "Icao",          # flights's ICAO code
     "to": "To",              # arrival airport
     "from": "From",          # departure airport
-    "callsign": "Call",          # callsign
+    "callsign": "Call",      # callsign
     "type": "Type",          # aircraft ICAO type
     "operator": "Op",        # flight operator
 }
@@ -81,23 +83,27 @@ def __build_query(fltr):
     return query
 
 
-def flights_str_get(print_fltr, flights):
-    """ Pretty print flight data.
+def flights_str_get(print_attr, flights):
+    """Format the raw flight data into a neat string.
+
+    Filter the raw flight data by applying the given attributes.
 
     Args:
-        print_fltr (list): List of attributes to print.
+        print_attr (list): List of flight attributes to print.
         flights (dict): Dict of ADS-B Exchange flight data.
-    """
 
+    Returns:
+        str: Pretty printed flight data.
+    """
     # Print a neat header of the attributes.
     header = ""
-    for each_item in print_fltr:
+    for each_item in print_attr:
         header += "{:12s}".format(each_item.upper())
     header += "\n"
 
     # Print the data.
     flight_data = ""
-    pkeys = [FLTR_RESPS[key] for key in print_fltr]
+    pkeys = [FLTR_RESPS[key] for key in print_attr]
     for each_flight in flights:
         # Extract intersted keys/values to print in to a new dict.
         flight = dict((k, each_flight[k]) for k in pkeys if k in each_flight)
@@ -113,6 +119,7 @@ def flights_str_get(print_fltr, flights):
 
     return header + flight_data
 
+
 def flights_refine(fltr, flights):
     """Refine the ADS-B Exchange data into a smaller dataset.
 
@@ -121,7 +128,8 @@ def flights_refine(fltr, flights):
         flights (dict): Raw ADS-B Exchange data of all flights.
 
     Returns:
-        list: List of refined (by applying fltr) ADS-B Exchange flight data.
+        list: List of dicts of refined flight data.
+              [{flight1}, {flight2}, ...]
     """
     rflights = []
 
@@ -129,12 +137,18 @@ def flights_refine(fltr, flights):
         tmp = dict((key, plane[key]) for key in fltr if key in plane)
         rflights.append(tmp)
 
-    LOG.debug("refined flights: %s", pprint.pformat(rflights))
     return rflights
 
 
 def flights_get(flight_fltr):
-    """Fetch flight(s) information from ADS-B Exchange. """
+    """Fetch flight(s) information from ADS-B Exchange.
+
+    Args:
+        flight_fltr (dict): ADS-B Exchange supported flight filters.
+
+    Returns:
+        json: Live and filtered ADS-B Exchange flight data.
+    """
 
     # Map the incoming filter to ADS-B Exchange's format.
     fltr = dict((FLTR_KEYS[key], flight_fltr[key]) for key in

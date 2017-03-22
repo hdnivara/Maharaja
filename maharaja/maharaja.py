@@ -17,7 +17,7 @@ logging.basicConfig(format=fmt)
 log.setLevel(logging.DEBUG)
 
 
-def print_filters(filter_type):
+def __print_filters(filter_type):
     """Print the list of available filters and a short desc. """
     if filter_type is "map":
         filter_keys = adsbx.FLTR_MAPS.keys()
@@ -35,7 +35,7 @@ def print_filters(filter_type):
             print "{:10}: {}".format(key, adsbx.FLTR_HELP[key])
 
 
-def parse_args():
+def __parse_args():
     """Parse arguments. """
     parser = argparse.ArgumentParser(description="Plot flight data on a map")
 
@@ -100,13 +100,30 @@ def airport_db_create(flight_data):
 
 
 def flights_get(flight_fltr):
-    """Get flight information. """
+    """Get flight information.
+
+    Args:
+        flight_fltr(dict): Get flight data bound to this filter.
+                           E.g., airport='KPHX', distance=100kms
+
+    Returns:
+        dict: Filterd flight information.
+    """
     flight_data = adsbx.flights_get(flight_fltr)
     return flight_data
 
 
 def flights_refine(flight_data):
-    """Refine flight information. """
+    """Refine flight information.
+
+    Filter raw flight information into a smaller dataset.
+
+    Args:
+        flight_data (dict): Raw flight information.
+
+    Returns:
+        dict: Refined flight information.
+    """
     resp_fltr = adsbx.FLTR_RESPS.values()
 
     rflights = adsbx.flights_refine(resp_fltr, flight_data)
@@ -114,9 +131,14 @@ def flights_refine(flight_data):
 
 
 def flights_print(print_attr, flight_data):
-    """Print flight information. """
+    """Print flight information.
+
+    Args:
+        print_attr (list): List of attributes to be printed.
+        flight_data (dict): Raw flight information.
+    """
     flights = adsbx.flights_str_get(print_attr, flight_data)
-    return flights
+    print flights
 
 
 def flights_map(map_attr, flight_data):
@@ -128,19 +150,19 @@ def flights_map(map_attr, flight_data):
 def main():
     """Entry point to the program. """
 
-    args = parse_args()
+    args = __parse_args()
     log.debug(pprint.pformat(args))
 
     if args.list_map_attrs:
-        print_filters("map")
+        __print_filters("map")
         sys.exit(0)
 
     if args.list_print_attrs:
-        print_filters("print")
+        __print_filters("print")
         sys.exit(0)
 
     if args.list_flight_filters:
-        print_filters("flight")
+        __print_filters("flight")
         sys.exit(0)
 
     flight_fltr = utils.cskvp_to_dict(args.flight_filters)
@@ -153,8 +175,7 @@ def main():
 
     # Print flight information.
     if args.print_flag:
-        flights = flights_print(print_attr, rflights)
-        print flights
+        flights_print(print_attr, rflights)
 
     # Map flight data.
     if args.map_flag:
